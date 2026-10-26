@@ -3,7 +3,7 @@
 @font-face{font-family:'Corinthia';src:url('assets/fonts/Corinthia-Bold.ttf') format('truetype');font-weight:700;font-display:swap}
 :root{--ice:#bfe3f2;--cyan:#4fc3f7;--deep:#04121f;--glass:rgba(255,255,255,.07)}
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;overflow-x:hidden}
 body{min-height:100vh;color:#dbeaf3;font-family:'Montserrat',sans-serif;font-weight:300;
  background:radial-gradient(ellipse at 50% 15%,#0d4a73 0%,#07263f 40%,#020a12 100%) fixed;overflow-x:hidden}
 .curtain{position:fixed;top:0;bottom:0;width:22vw;max-width:260px;z-index:0;pointer-events:none;
@@ -24,18 +24,15 @@ body{min-height:100vh;color:#dbeaf3;font-family:'Montserrat',sans-serif;font-wei
 .divider i{flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--ice),transparent)}
 .divider b{width:6px;height:6px;border-radius:50%;background:var(--ice)}
 .eyebrow{font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;opacity:.7}
-.title{margin:0;width:100%;display:flex;justify-content:center}
-.logo-wrap{position:relative;display:block;width:100%;max-width:340px;margin-top:2.5rem}
-.logo{position:relative;display:block;width:100%;height:auto;filter:drop-shadow(0 6px 18px rgba(60,170,255,.55)) drop-shadow(0 0 30px rgba(60,170,255,.25));animation:breathe 4s ease-in-out infinite}
-.echo{position:absolute;left:0;top:0;width:100%;height:auto;opacity:0;pointer-events:none;filter:blur(1px) drop-shadow(0 0 14px rgba(90,190,255,.7));animation:echo 4s ease-out infinite}
-.e2{animation-delay:.6s}
-.ring{position:absolute;left:50%;top:62%;width:60%;aspect-ratio:3/1;border:1.5px solid rgba(150,215,255,.55);border-radius:50%;transform:translate(-50%,-50%) scale(.2);opacity:0;pointer-events:none;box-shadow:0 0 18px rgba(90,190,255,.35);animation:ripple 5s cubic-bezier(.2,.6,.3,1) infinite}
-.r2{animation-delay:1.6s}
-.r3{animation-delay:3.2s}
-@keyframes ripple{0%{transform:translate(-50%,-50%) scale(.2);opacity:.9}100%{transform:translate(-50%,-50%) scale(5.5);opacity:0}}
-@keyframes echo{0%{transform:scale(1);opacity:.55}100%{transform:scale(1.28);opacity:0}}
-@keyframes breathe{50%{filter:drop-shadow(0 6px 22px rgba(90,200,255,.85)) drop-shadow(0 0 40px rgba(60,170,255,.45))}}
-@media(prefers-reduced-motion:reduce){.ring,.echo,.logo{animation:none}}
+.title{margin:0}
+.logo{display:block;width:100%;max-width:210px;height:auto;margin:2.2rem auto 0;filter:drop-shadow(0 4px 14px rgba(60,170,255,.45))}
+.water{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.water i{position:absolute;left:50%;top:68%;width:90vmin;height:30vmin;border:1px solid rgba(150,215,255,.22);border-radius:50%;transform:translate(-50%,-50%) scale(.1);opacity:0;animation:ripple 12s cubic-bezier(.25,.5,.3,1) infinite}
+.water i:nth-child(2){animation-delay:3s;left:30%;top:80%}
+.water i:nth-child(3){animation-delay:6s;left:72%;top:74%}
+.water i:nth-child(4){animation-delay:9s;left:50%;top:90%}
+@keyframes ripple{0%{transform:translate(-50%,-50%) scale(.1);opacity:0}15%{opacity:.7}100%{transform:translate(-50%,-50%) scale(2.4);opacity:0}}
+@media(prefers-reduced-motion:reduce){.water i{animation:none}}
 .sub{font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;opacity:.7}
 .scroll-hint{margin-top:30px;color:var(--ice);text-decoration:none;font-size:1.6rem;animation:bob 1.6s infinite}
 @keyframes bob{50%{transform:translateY(8px)}}
