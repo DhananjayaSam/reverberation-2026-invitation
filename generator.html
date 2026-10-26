@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Invitation Link Generator</title>
+<link rel="stylesheet" href="style.css">
+<style>.page{padding-top:40px}input,textarea{width:100%;padding:12px;border-radius:8px;border:1px solid #5a8ba8;background:#0a2438;color:#fff;font:inherit;margin-top:12px}
+textarea{min-height:140px}.out{word-break:break-all;font-size:.8rem;text-align:left;margin-top:14px;white-space:pre-wrap}</style></head>
+<body><main class="page"><section class="card glass">
+<h1 class="sect">Link Generator</h1>
+<p class="muted">Enter one guest name per line. Base URL defaults to where this site is hosted.</p>
+<input id="base" aria-label="Base URL">
+<textarea id="names" placeholder="Bhathiya Heittiarachchi, DTM&#10;Another Guest"></textarea>
+<div class="btns"><button class="btn" id="go">Generate links</button><button class="btn ghost" id="copy">Copy all</button></div>
+<div class="out" id="out"></div></section></main>
+<script>
+const base=document.getElementById('base');base.value=location.href.replace(/generator\.html.*$/,'index.html');
+const out=document.getElementById('out');
+document.getElementById('go').onclick=()=>{out.textContent=document.getElementById('names').value.split('\n').map(n=>n.trim()).filter(Boolean)
+ .map(n=>`${n}\n${base.value}?to=${encodeURIComponent(n)}\n`).join('\n')};
+document.getElementById('copy').onclick=()=>navigator.clipboard.writeText(out.textContent);
+</script></body></html>
