@@ -1,3 +1,6 @@
+@font-face{font-family:'Montserrat';src:url('assets/fonts/Montserrat-Variable.ttf') format('truetype');font-weight:100 900;font-display:swap}
+@font-face{font-family:'Corinthia';src:url('assets/fonts/Corinthia-Regular.ttf') format('truetype');font-weight:400;font-display:swap}
+@font-face{font-family:'Corinthia';src:url('assets/fonts/Corinthia-Bold.ttf') format('truetype');font-weight:700;font-display:swap}
 :root{--ice:#bfe3f2;--cyan:#4fc3f7;--deep:#04121f;--glass:rgba(255,255,255,.07)}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -16,17 +19,13 @@ body{min-height:100vh;color:#dbeaf3;font-family:'Montserrat',sans-serif;font-wei
 .hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:14px}
 .brand{font-weight:600;letter-spacing:.12em;font-size:1.1rem;color:#fff;display:flex;flex-direction:column;line-height:1.1}
 .brand span{font-weight:300;font-size:.7rem;letter-spacing:.28em}
-.guest{font-family:'Great Vibes',cursive;font-weight:400;font-size:clamp(2.4rem,9vw,3.6rem);color:#fff;margin-top:36px;text-shadow:0 0 25px rgba(120,200,255,.5);word-break:break-word}
+.guest{font-family:'Corinthia',cursive;font-weight:400;font-size:clamp(3.4rem,13vw,5.2rem);line-height:1;color:#fff;margin-top:36px;text-shadow:0 0 25px rgba(120,200,255,.5);word-break:break-word}
 .divider{display:flex;align-items:center;gap:8px;width:80%}
 .divider i{flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--ice),transparent)}
 .divider b{width:6px;height:6px;border-radius:50%;background:var(--ice)}
 .eyebrow{font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;opacity:.7}
-.title{position:relative;margin:20px 0 6px;display:flex;flex-direction:column;align-items:center}
-.year{font-family:'Antonio',sans-serif;font-size:clamp(5rem,26vw,9rem);line-height:.8;
- color:rgba(190,225,245,.18);-webkit-text-stroke:2px rgba(190,225,245,.5);filter:drop-shadow(0 0 20px rgba(80,180,255,.4))}
-.word{font-family:'Antonio',sans-serif;font-weight:400;font-size:clamp(2.1rem,11.5vw,4.4rem);letter-spacing:.02em;margin-top:-.35em;
- background:linear-gradient(180deg,#e8f6fc,#8fbcd0);-webkit-background-clip:text;background-clip:text;color:transparent;
- filter:drop-shadow(0 6px 14px rgba(60,170,255,.5))}
+.title{margin:0;width:100%;display:flex;justify-content:center}
+.logo{width:100%;max-width:520px;height:auto;margin-top:-6%;filter:drop-shadow(0 6px 18px rgba(60,170,255,.55)) drop-shadow(0 0 30px rgba(60,170,255,.25))}
 .sub{font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;opacity:.7}
 .scroll-hint{margin-top:30px;color:var(--ice);text-decoration:none;font-size:1.6rem;animation:bob 1.6s infinite}
 @keyframes bob{50%{transform:translateY(8px)}}
@@ -43,7 +42,7 @@ hr{border:0;height:1px;background:linear-gradient(90deg,transparent,var(--ice),t
 .chip{font-weight:600;letter-spacing:.12em;text-transform:uppercase;font-size:.72rem;display:flex;gap:8px;align-items:center}
 .dot{width:14px;height:14px;border-radius:50%;border:1px solid #fff;display:inline-block;margin-right:-4px}
 .dot.blue{background:#1d6ea3}.dot.black{background:#000;margin-right:4px}
-.sect{font-family:'Great Vibes',cursive;font-weight:400;font-size:2.2rem;color:#fff;margin-bottom:6px}
+.sect{font-family:'Corinthia',cursive;font-weight:400;font-size:3.4rem;line-height:1;color:#fff;margin-bottom:6px}
 .muted{opacity:.8;font-size:.9rem;line-height:1.6}
 .btns{display:flex;flex-direction:column;gap:12px;margin-top:20px}
 .btn{display:block;padding:14px 18px;border-radius:50px;text-decoration:none;font-weight:500;letter-spacing:.08em;font-size:.85rem;color:#032033;
@@ -51,7 +50,7 @@ hr{border:0;height:1px;background:linear-gradient(90deg,transparent,var(--ice),t
 .btn.ghost{background:transparent;color:#fff;border-color:rgba(190,225,245,.5)}
 .btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(80,190,255,.4)}
 footer{text-align:center;opacity:.7;font-size:.8rem;letter-spacing:.1em;line-height:2}
-.sign{font-family:'Great Vibes',cursive;font-size:1.6rem}
+.sign{font-family:'Corinthia',cursive;font-size:2.6rem}
 .reveal{opacity:0;transform:translateY(24px);transition:1s}
 .reveal.in{opacity:1;transform:none}
 @media(min-width:520px){.btns{flex-direction:row}.btn{flex:1}}
