@@ -4,7 +4,11 @@
   const gl = cv.getContext('webgl', { antialias: false, alpha: false });
   if (!gl) return; // falls back to the CSS gradient on <body>
   const vs = 'attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}';
-  const fs = `#ifdef GL_FRAGMENT_PRECISION_HIGH`nprecision highp float;`n#else`nprecision mediump float;`n#endif
+  const fs = `#ifdef GL_FRAGMENT_PRECISION_HIGH
+precision highp float;
+#else
+precision mediump float;
+#endif
 uniform vec2 r;uniform float t;
 float h(vec2 p){vec3 q=fract(vec3(p.xyx)*.1031);q+=dot(q,q.yzx+33.33);return fract((q.x+q.y)*q.z);}
 float n(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);
