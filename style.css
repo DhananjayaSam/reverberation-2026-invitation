@@ -27,12 +27,14 @@ body{min-height:100vh;color:#dbeaf3;font-family:'Montserrat',sans-serif;font-wei
 .title{margin:0}
 .logo{display:block;width:100%;max-width:210px;height:auto;margin:2.2rem auto 0;filter:drop-shadow(0 4px 14px rgba(60,170,255,.45))}
 .water{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:0}
-.water i{position:absolute;left:50%;top:68%;width:90vmin;height:30vmin;border:1px solid rgba(150,215,255,.22);border-radius:50%;transform:translate(-50%,-50%) scale(.1);opacity:0;animation:ripple 12s cubic-bezier(.25,.5,.3,1) infinite}
-.water i:nth-child(2){animation-delay:3s;left:30%;top:80%}
-.water i:nth-child(3){animation-delay:6s;left:72%;top:74%}
-.water i:nth-child(4){animation-delay:9s;left:50%;top:90%}
-@keyframes ripple{0%{transform:translate(-50%,-50%) scale(.1);opacity:0}15%{opacity:.7}100%{transform:translate(-50%,-50%) scale(2.4);opacity:0}}
-@media(prefers-reduced-motion:reduce){.water i{animation:none}}
+.water i{position:absolute;left:-8vmax;top:-8vmax;width:260vmax;height:260vmax;margin:-130vmax 0 0 -130vmax;border-radius:50%;transform:scale(0);opacity:0;
+ border:2px solid rgba(150,215,255,.28);box-shadow:0 0 30px 6px rgba(90,190,255,.14),inset 0 0 40px 4px rgba(90,190,255,.1);animation:wave 14s cubic-bezier(.3,.1,.5,1) infinite}
+.water i:nth-child(2){animation-delay:1.4s}
+.water i:nth-child(3){animation-delay:2.8s}
+.water i:nth-child(4){animation-delay:4.2s}
+.water i:nth-child(5){animation-delay:5.6s}
+@keyframes wave{0%{transform:scale(0);opacity:0}10%{opacity:1}70%{opacity:.5}100%{transform:scale(1);opacity:0}}
+@media(prefers-reduced-motion:reduce){.water i{animation:none;opacity:0}}
 .sub{font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;opacity:.7}
 .scroll-hint{margin-top:30px;color:var(--ice);text-decoration:none;font-size:1.6rem;animation:bob 1.6s infinite}
 @keyframes bob{50%{transform:translateY(8px)}}
